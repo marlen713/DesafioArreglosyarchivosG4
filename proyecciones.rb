@@ -5,19 +5,21 @@
 # ● Las ventas totales del segundo semestre, dado que en la segunda mitad del semestre se vende un 20% más.
 # ● El resultado debe ser presentado en un archivo llamado resultados.data. Los datos deben contener máximo 2 decimales y estar cada uno en una sola línea.
 
-#1.- abrir el archivo
-#2.- leer el archivo
-#3.- asignar los datos del archivo a una variable
-data = open("data").readlines
-#4.- recorrer la variable
-#5.- cambiar tipo de datos a flotante
 #ruby proyecciones.rb
 
-
+data = open('ventas_base.db').read.split(',')
 data_float = data.map do |element|
     element.to_f
 end
 
 
-300070,50520,35000,32810,47999,62050,89100,21000,100010,121900,99549,210
-000
+primera_primera = (data_float[0...2].sum) * 1.1
+primera_segunda = data_float[3...5].sum
+
+
+segundo_primera = data_float[6...8].sum
+segundo_segunda = (data_float[9...11].sum) * 1.2
+
+
+
+
